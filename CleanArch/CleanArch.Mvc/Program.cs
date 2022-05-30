@@ -57,13 +57,14 @@ else
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseCookiePolicy();
+app.UseRouting();
 app.UseAuthentication();
-
-app.UseMvc(routes =>
+app.UseAuthorization();
+app.UseEndpoints(endpoints =>
 {
-    routes.MapRoute(
-        name: "default",
-        template: "{controller=Home}/{action=Index}/{id?}");
+    endpoints.MapRazorPages();
+    endpoints.MapControllerRoute(
+        "default", "{controller=Home}/{action=Index}/{id?}");
 });
 
 app.Run();
