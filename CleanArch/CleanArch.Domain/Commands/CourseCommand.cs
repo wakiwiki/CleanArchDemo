@@ -1,7 +1,4 @@
 ﻿using CleanArch.Domain.Core.Commands;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CleanArch.Domain.Commands
 {

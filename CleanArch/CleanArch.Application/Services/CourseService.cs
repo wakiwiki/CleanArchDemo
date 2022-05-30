@@ -5,9 +5,7 @@ using CleanArch.Application.ViewModels;
 using CleanArch.Domain.Commands;
 using CleanArch.Domain.Core.Bus;
 using CleanArch.Domain.Interfaces;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace CleanArch.Application.Services
 {

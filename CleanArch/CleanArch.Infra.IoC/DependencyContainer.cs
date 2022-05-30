@@ -9,9 +9,6 @@ using CleanArch.Infra.Data.Context;
 using CleanArch.Infra.Data.Repository;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CleanArch.Infra.IoC
 {

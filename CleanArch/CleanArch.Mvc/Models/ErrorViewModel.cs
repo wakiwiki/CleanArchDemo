@@ -1,5 +1,3 @@
-using System;
-
 namespace CleanArch.Mvc.Models
 {
     public class ErrorViewModel
