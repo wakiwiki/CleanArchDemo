@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="..\Shared\sharedSettings.json" Link="sharedSettings.json" CopyToOutputDirectory="PreserveNewest">
+    <Content Include="..\Shared\sharedSettings.json" Link="sharedSettings.json" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="Always">
     </Content>
   </ItemGroup>
 
