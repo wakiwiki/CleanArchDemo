@@ -5,6 +5,10 @@
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Include="..\Shared\sharedSettings.json" Link="sharedSettings.json" CopyToOutputDirectory="PreserveNewest"/>
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="11.0.1" />

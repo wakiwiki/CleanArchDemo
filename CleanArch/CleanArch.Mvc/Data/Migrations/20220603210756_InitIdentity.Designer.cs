@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CleanArch.Mvc.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220530201207_InitIdentity")]
+    [Migration("20220603210756_InitIdentity")]
     partial class InitIdentity
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

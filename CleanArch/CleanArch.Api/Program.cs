@@ -8,10 +8,14 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using System.IO;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder();
-
+var sharedFolder = Path.Combine(builder.Environment.ContentRootPath, "..", "Shared");
+builder.Configuration
+    .AddJsonFile(Path.Combine(sharedFolder, "sharedSettings.json"), true) // When running using dotnet run
+    .AddJsonFile("sharedSettings.json", true);// When app is published
 builder.Services.AddDbContext<UniversityDBContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("UniversityDBConnection"));

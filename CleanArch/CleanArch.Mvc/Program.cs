@@ -11,10 +11,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.IO;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder();
-
+var sharedFolder = Path.Combine(builder.Environment.ContentRootPath, "..", "Shared");
+builder.Configuration
+    .AddJsonFile(Path.Combine(sharedFolder, "sharedSettings.json"), true) // When running using dotnet run
+    .AddJsonFile("sharedSettings.json", true);// When app is published
 builder.Services.Configure<CookiePolicyOptions>(options =>
 {
     // This lambda determines whether user consent for non-essential cookies is needed for a given request.
