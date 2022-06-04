@@ -2,7 +2,6 @@
 using CleanArch.Infra.Data.Context;
 using CleanArch.Infra.IoC;
 using CleanArch.Mvc.Configurations;
-using CleanArch.Mvc.Data;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
@@ -26,11 +25,11 @@ builder.Services.Configure<CookiePolicyOptions>(options =>
     options.MinimumSameSitePolicy = SameSiteMode.None;
 });
 
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
+builder.Services.AddDbContext<UniversityIdentityDBContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("UniversityIdentityDBConnection")));
 builder.Services.AddDefaultIdentity<IdentityUser>()
     .AddDefaultUI()
-    .AddEntityFrameworkStores<ApplicationDbContext>();
+    .AddEntityFrameworkStores<UniversityIdentityDBContext>();
 
 builder.Services.AddDbContext<UniversityDBContext>(options =>
 {

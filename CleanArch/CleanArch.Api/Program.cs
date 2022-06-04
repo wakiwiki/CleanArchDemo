@@ -16,11 +16,9 @@ var sharedFolder = Path.Combine(builder.Environment.ContentRootPath, "..", "Shar
 builder.Configuration
     .AddJsonFile(Path.Combine(sharedFolder, "sharedSettings.json"), true) // When running using dotnet run
     .AddJsonFile("sharedSettings.json", true);// When app is published
-builder.Services.AddDbContext<UniversityDBContext>(options =>
-{
-    options.UseSqlServer(builder.Configuration.GetConnectionString("UniversityDBConnection"));
-});
 
+builder.Services.AddDbContext<UniversityDBContext>(options => options
+                .UseSqlServer(builder.Configuration.GetConnectionString("UniversityDBConnection")));
 builder.Services.AddMvc();
 
 builder.Services.AddSwaggerGen(c =>
